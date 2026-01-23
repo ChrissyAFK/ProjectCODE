@@ -14,10 +14,12 @@ A lightweight, header-only friendly C++17 mini-library inspired by Python's `tur
 - `src/turtle.hpp`: ASCII turtle implementation
 - `src/canvas_rgb.hpp`: Color (RGB) canvas with PPM and BMP export
 - `src/turtle_rgb.hpp`: Color turtle implementation
+- `src/shapes.hpp`: Convenience helpers (rgb, draw_polygon, draw_spiral)
 - `src/window.hpp`: Win32 helper to open a window and run user draw code
 - `examples/basic_demo.cpp`: ASCII demo showing loops, conditionals, pen control
 - `examples/color_demo.cpp`: Color demo that saves `color_output.ppm`
 - `examples/window_demo.cpp`: Color demo that opens a Win32 window (no external deps)
+- `examples/filled_square_demo.cpp`: Windowed demo using a variable and for-loop to draw and fill a square
 
 ## Build & run (PowerShell, C++17)
 

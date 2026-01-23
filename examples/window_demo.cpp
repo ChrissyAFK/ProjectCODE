@@ -10,24 +10,30 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int) {
     opts.title = L"ProjectCODE Turtle";
 
     auto draw = [&](CanvasRGB &, TurtleRGB &t, std::function<bool()> flush) {
-        t.set_delay_ms(5);
+        t.set_delay_ms(50);
 
-        move_to_with_pen(t, 150, 300, false, flush);
-        draw_polygon(t, 4, 120, rgb(255, 69, 0), flush);
-
-        move_to_with_pen(t, 420, 200, false, flush);
-        draw_polygon(t, 3, 140, rgb(0, 128, 255), flush);
-
-        move_to_with_pen(t, 500, 400, false, flush);
-        draw_spiral(t, 60, 3.0, 18.0, rgb(34, 139, 34), flush);
-
-        move_to_with_pen(t, 100, 100, false, flush);
-        t.set_pen(rgb(128, 0, 128));
-        t.turn_left(90);
-        t.forward(180);
+        t.move_to(150, 300); 
         flush();
-
-        t.stamp_dot(5, rgb(0, 0, 0));
+        draw_polygon(t, 4, 120, rgb(255, 69, 0), flush);
+        t.pen_up(); 
+        t.move_to(420, 200); 
+        t.pen_down(); 
+        flush();
+        draw_polygon(t, 3, 140, rgb(0, 128, 255), flush);
+        t.pen_up(); 
+        t.move_to(500, 400); 
+        t.pen_down(); 
+        flush();
+        draw_spiral(t, 60, 3.0, rgb(34, 139, 34), 18.0, flush);
+        t.pen_up(); 
+        t.move_to(100, 100); 
+        t.pen_down(); 
+        flush();
+        t.set_pen(rgb(128, 0, 128)); 
+        t.turn_left(90); 
+        t.forward(180); 
+        flush();
+        t.stamp_dot(5, rgb(0, 0, 0)); 
         flush();
     };
 
